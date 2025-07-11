@@ -1,0 +1,156 @@
+/* 1. Full-page particles background */
+html, body {
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  #particles-js {
+    position: fixed;
+    width: 100%; height: 100%;
+    z-index: -1;
+    top: 0; left: 0;
+  }
+  
+  /* 2. Dark/Light mode */
+  body.dark-mode {
+    background: #111;
+    color: #eee;
+  }
+  body.light-mode {
+    background: #f5f5f5;
+    color: #333;
+  }
+  
+  /* 3. Toggle button */
+  .mode-toggle {
+    position: fixed; top: 16px; right: 16px;
+    background: rgba(0,0,0,0.5); color: #fff;
+    border: none; padding: 8px; border-radius: 50%;
+    cursor: pointer; z-index: 10;
+    transition: background 0.3s;
+  }
+  .mode-toggle:hover {
+    background: rgba(0,0,0,0.8);
+  }
+  
+  /* 4. Main container */
+  .container {
+    position: relative;
+    max-width: 460px; width: 90%;
+    margin: auto; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    padding: 30px; border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0,255,204,0.4);
+    text-align: center;
+  }
+  
+  /* 5. Headings */
+  h1 {
+    margin: 0 0 10px;
+    color: #00ffcc;
+    font-size: 1.8rem;
+  }
+  .subtitle {
+    color: #aaa; font-size: 0.9rem; margin-bottom: 20px;
+  }
+  
+  /* 6. Inputs & buttons */
+  input {
+    width: 100%; padding: 12px; margin-bottom: 12px;
+    border: none; border-radius: 8px; font-size: 1rem;
+  }
+  button {
+    padding: 12px 20px; border: none; border-radius: 8px;
+    background: #00ffcc; color: #000; font-weight: bold;
+    cursor: pointer; font-size: 1rem;
+    transition: background 0.3s;
+  }
+  button:hover {
+    background: #00e6b8;
+  }
+  
+  /* 7. Loading (glow + blink) */
+  .loading-text {
+    display: none; margin-top: 16px;
+    font-size: 1.2rem; font-weight: bold;
+    color: #00ffd5; text-align: center;
+    animation: glow 1.5s infinite alternate, blink 1s infinite;
+  }
+  @keyframes glow {
+    from { text-shadow: 0 0 8px #00ffd5; }
+    to   { text-shadow: 0 0 20px #00ffd5; }
+  }
+  @keyframes blink {
+    0%,100% { opacity: 1; }
+    50%     { opacity: 0.5; }
+  }
+  
+  /* 8. Result box */
+  .result-box {
+    margin-top: 20px; padding: 16px; border-radius: 8px;
+    font-size: 1.1rem; transition: background 0.3s;
+  }
+  
+  /* 9. Progress bar */
+  .progress-bar-container {
+    width: 100%; height: 16px;
+    background: #333; border-radius: 8px;
+    overflow: hidden; margin-top: 20px;
+  }
+  .progress-bar {
+    height: 100%; width: 0;
+    background: linear-gradient(90deg, #00ff00, #ffff00, #ff0000);
+    transition: width 0.6s ease;
+  }
+  
+  /* 10. Tooltip list */
+  .tooltip-list {
+    list-style: none; padding: 0; margin-top: 20px;
+    font-size: 0.9rem; color: #ccc;
+  }
+  .tooltip-list li {
+    margin: 6px 0; cursor: help; transition: color 0.2s;
+  }
+  .tooltip-list li:hover {
+    color: #00ffcc;
+  }
+  /* Suspicious Background Animation */
+@keyframes warningGlow {
+  0% { box-shadow: 0 0 10px #ffcc00; }
+  50% { box-shadow: 0 0 20px #ff9900; }
+  100% { box-shadow: 0 0 10px #ffcc00; }
+}
+
+.suspicious-glow {
+  animation: warningGlow 1s infinite;
+  transition: background 0.5s, color 0.5s;
+}
+/* Moving background */
+body {
+  background: linear-gradient(-45deg, #1f1c2c, #928dab, #1f1c2c, #928dab);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #fff;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Dark Mode Toggle */
+body.dark-mode {
+  background: linear-gradient(-45deg, #121212, #292929, #121212, #292929);
+  color: white;
+}
+
+/* Result background states */
+#result.phishing { background: #660000; }
+#result.suspicious { background: #664400; }
+#result.safe { background: #004d33; }
+#result.neutral { background: #333; }
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

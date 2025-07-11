@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Phishing Website Detector</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- FontAwesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+  <!-- Dark/Light Mode Toggle -->
+  <button onclick="toggleTheme()">🌙 Toggle Theme</button>
+
+
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <div class="container">
+    <h1><i class="fas fa-shield-alt"></i> Phishing Detector</h1>
+    <p class="subtitle">Enter a URL to check for phishing</p>
+
+    <input type="text" id="urlInput" placeholder="🔗 https://example.com" />
+    <button onclick="checkURL()"><i class="fas fa-search"></i> Scan URL</button>
+
+    <!-- Scanning animation -->
+    <div id="loadingText" class="loading-text">🔍 Scanning<span id="dots">.</span></div>
+
+    <!-- Result box -->
+    <div id="result" class="result-box"></div>
+
+    <!-- Risk progress bar -->
+    <div class="progress-bar-container">
+      <div id="riskBar" class="progress-bar"></div>
+    </div>
+
+    <!-- Tooltip list -->
+    <ul class="tooltip-list">
+      <li title="URLs longer than 75 characters can hide malicious parts.">🔍 Long URL</li>
+      <li title="The '@' symbol can hide real destinations.">📧 Contains '@'</li>
+      <li title="Too many subdomains can mask the real site.">🌐 Many Subdomains</li>
+      <li title="Using raw IPs instead of domain names is suspicious.">🧮 IP Address used</li>
+      <li title="Common phishing patterns like 'g00gle', 'faceb00k', etc.">🧠 Phishing-like Patterns</li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
